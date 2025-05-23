@@ -1,9 +1,10 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router';
-
+import { LocalNotifications } from '@capacitor/local-notifications'
 import { IonicVue } from '@ionic/vue';
-
+import { Preferences } from '@capacitor/preferences'
+import { powiadomienie } from './powiadomienia';
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/vue/css/core.css';
 
@@ -40,4 +41,16 @@ const app = createApp(App)
 
 router.isReady().then(() => {
   app.mount('#app');
+});
+
+// Uprawnienia do powiadomień
+LocalNotifications.requestPermissions().then(result => {
+  if (result.display === 'granted') {
+    powiadomienie()
+  }
+});
+
+Preferences.set({
+  key: 'lastOpen',
+  value: new Date().toISOString()
 });

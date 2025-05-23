@@ -5,7 +5,7 @@ import TabsPage from '../views/TabsPage.vue'
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    redirect: '/tabs/tab1'
+    redirect: '/tabs/TabStronaGlowna'
   },
   {
     path: '/tabs/',
@@ -13,19 +13,19 @@ const routes: Array<RouteRecordRaw> = [
     children: [
       {
         path: '',
-        redirect: '/tabs/tab1'
+        redirect: '/tabs/TabStronaGlowna'
       },
       {
-        path: 'tab1',
-        component: () => import('@/views/Tab1Page.vue')
+        path: 'TabStronaGlowna',
+        component: () => import('@/views/StronaGlowna.vue')
       },
       {
-        path: 'tab2',
-        component: () => import('@/views/Tab2Page.vue')
+        path: 'TabOknoNauki',
+        component: () => import('@/views/OknoNauki.vue')
       },
       {
-        path: 'tab3',
-        component: () => import('@/views/Tab3Page.vue')
+        path: 'TabOknoModyfikacji',
+        component: () => import('@/views/OknoModyfikacji.vue')
       }
     ]
   }
