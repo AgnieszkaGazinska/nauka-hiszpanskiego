@@ -1,6 +1,6 @@
 # Software characteristics
 ## a. Application purpose
-
+The primary purpose of the application is to provide an intuitive and efficient responsive web-based platform for language learning, specifically focusing on Polish-Spanish vocabulary. The application aims to bridge the gap between simple memorization and active recall through an interactive flashcard system. The application is designed to be fully accessible across various devices, including desktops, tablets, and smartphones, ensuring a consistent user experience regardless of screen size.
 
 ---
 
@@ -61,7 +61,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 ---
 
-## 3. Category Operations (CRUD)
+## 3. Category CRUD Operations
 
 ## 3.1 Create Operation
 ### User Story 3.1.1: Create New Category
@@ -102,3 +102,113 @@ OTHER DEALINGS IN THE SOFTWARE.
 #### The button text reverts back to "Delete Category."
 
 ---
+
+## 4. Category Content CRUD Operations
+
+## 4.1 Read operation
+### User Story 4.1.1: View Word List
+#### As a user, I want to access the content of a specific category, so that I can see all the Polish and Spanish word pairs I have added.
+
+### Acceptance Criteria:
+#### Displays a list of word pairs (Polish version followed by Spanish version).
+#### Each pair has visible "Edit" (Pen) and "Delete" (X) icons.
+
+---
+
+## 4.2 Create operation
+### User Story 4.2.1: Add New Vocabulary Pair
+#### As a user, I want to add a new word pair via a "Add New Word" button, so that I can expand the vocabulary within that category.
+
+### Acceptance Criteria:
+#### Clicking the button opens a modal with inputs for both languages.
+#### Clicking "Add" button saves the data to MSSQL database.
+#### Clicking "Cancel" button closes the modal without changes.
+
+---
+
+## 4.3 Update operation
+### User Story 4.3.1: Edit Vocabulary Pair
+#### As a user, I want to modify an existing word pair by clicking the edit icon, so that I can fix typos or update translations.
+
+### Acceptance Criteria:
+#### Opens a pop-up modal with current values pre-loaded into the fields.
+#### Changes are saved to the database upon clicking "Save."
+
+---
+
+## 4.4 Delete operation
+### User Story 4.4.1: Delete Vocabulary Pair with Confirmation
+#### As a user, I want to delete a word pair by clicking the "X" icon and confirming my choice, so that I can remove unnecessary items safely.
+
+### Acceptance Criteria:
+#### Clicking the "X" icon triggers a "Confirm Deletion" dialog.
+#### Clicking "Delete" permanently removes the record from the database and the list.
+#### Clicking "Cancel" closes the dialog, leaving the record intact.
+
+---
+
+## 5. Flashcard Learning System
+
+## 5.1. Navigation & Study Mode
+### User Story 5.1.1: Entry to Learning View
+#### As a user, I want to click on a category name on the Home Screen, so that I am redirected to the Flashcard view to start learning.
+
+### Acceptance Criteria:
+#### The system navigates the user to the Learning View associated with the selected category ID.
+#### The view loads only the words assigned to the selected category.
+---
+### User Story 5.1.2: Language Direction Toggle
+#### As a user, I want to use "PL" and "ES" buttons to toggle the translation direction, so that I can practice translating in both directions.
+
+### Acceptance Criteria:
+#### Switching to "PL" sets Polish as the source (displayed) and Spanish as the target (to be typed).
+#### Switching to "ES" reverses the logic.
+#### The UI updates instantly without reloading the page.
+
+---
+
+## 5.2 Card Navigation & Progression
+### User Story 5.2.1: Manual Card Switching
+#### As a user, I want to use "Next" and "Previous" arrow buttons, so that I can move between words in the current category.
+
+### Acceptance Criteria:
+#### Forward arrow displays the next word in the list.
+#### Backward arrow displays the previous word.
+#### Current progress (e.g., "3 / 12") updates with every click.
+---
+### User Story 5.2.2: Session Completion & Summary
+#### As a user, I want to be presented with a summary after navigating past the last card, so that I can see my results.
+
+### Acceptance Criteria:
+#### Clicking the "Next" arrow on the final card triggers a Summary Modal.
+#### The modal displays the Total Time elapsed since entering the category.
+#### The modal displays the Final Score (e.g., "Correct Answers: 8/10").
+
+---
+
+## 5.3 Answer Validation & Support
+### User Story 5.3.1: Special Character Input
+#### As a user, I want to use a dedicated toolbar with Spanish diacritics, so that I can accurately type translations without switching my system keyboard.
+
+### Acceptance Criteria:
+#### The interface includes a dedicated toolbar for Spanish diacritics (á, é, í, ó, ú, ñ, ü).
+#### Each button appends the respective character to the translation string.
+---
+### User Story 5.3.2: Real-time Feedback
+#### As a user, I want to check my answer and see immediate feedback, so that I know if I made a mistake.
+
+### Acceptance Criteria:
+#### "Check" button validates the input against the database.
+#### A dynamic validation message appears inline directly below the input field to provide immediate feedback.
+#### The system handles three feedback states in the same inline location:
+####   Success: Displays "Correct!" when the answer matches.
+####   Error: Displays "Incorrect" when the answer is wrong.
+####   Warning: Displays "Please enter an answer" if the input field is empty.
+---
+### User Story 5.3.3: Correct Answer Reveal
+#### As a user, I want to use the "Show correct answer" button, so that the system fills the field for me when I don't know the word.
+
+### Acceptance Criteria:
+#### Clicking the "Show correct answer" button retrieves the correct translation from the database (matching the current language mode).
+#### The system automatically populates the input field with the retrieved correct answer.
+#### The user can still click the "Check" button after the field is auto-filled to confirm the state as "Correct!".
