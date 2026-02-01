@@ -27,7 +27,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 ## 1.Notifications and User Engagement
 
 ### User Story 1.1: Notification Opt-in
-#### As a new user, I want to be asked for permission to receive receive notification, so that I can receive study reminders.
+#### As a new user, I want to be asked for permission to receive notification, so that I can receive study reminders.
 
 ### Acceptance Criteria:
 #### System triggers a permission dialog upon the first app launch or a specific milestone.
@@ -264,3 +264,8 @@ OTHER DEALINGS IN THE SOFTWARE.
 ### vite.config.ts
 ### .env
 ### capacitor.config.ts
+
+---
+
+# Database setup
+
