@@ -212,3 +212,55 @@ OTHER DEALINGS IN THE SOFTWARE.
 #### Clicking the "Show correct answer" button retrieves the correct translation from the database (matching the current language mode).
 #### The system automatically populates the input field with the retrieved correct answer.
 #### The user can still click the "Check" button after the field is auto-filled to confirm the state as "Correct!".
+
+---
+
+# Software Architecture
+
+## Development Architecture
+
+| Name                       | Purpose                                                | Version            |
+|----------------------------|--------------------------------------------------------|--------------------|
+| Visual Studio Code         | Primary Integrated Development Environment (IDE)       | 1.108.2            |
+| Windows 11                 | Operating system used during development               | 25H2               |
+| Node.js                    | JavaScript runtime for backend and tooling             | 22.15.1            |
+| Ionic CLI                  | Command-line interface for managing the Ionic project  | 7.2.1              |
+| Vite                       | Local development server and project bundler           | 5.4.19             |
+| TypeScript                 | Statically typed programming language                  | 5.6.2              |
+| MSSQL (Management Studio)  | Database management and administration tool            | 20.2.30.0          |
+
+---
+
+## System Architecture
+
+| Name                       | Purpose                                                | Version            |
+|----------------------------|--------------------------------------------------------|--------------------|
+| Vue.js                     | Core progressive interface framework                   | 3.3.0              |
+| Ionic Vue                  | Ionic components integration for Vue                   | 8.6.2              |
+| Node.js                    | JavaScript runtime for backend and tooling             | 22.15.1            |
+| Capacitor Core             | Native bridge for hardware features and mobile runtime | 7.2.0              |
+| Express.js                 | Backend API framework for handling requests            | 5.1.0              |
+| mssql (Node driver)        | Official Microsoft SQL Server client for Node.js       | 11.0.1             |
+| Axios                      | Promise-based HTTP client for API communication        | 1.9.0              |
+| Ionicons                   | Official premium icon set for the UI                   | 7.4.0              |
+| Dotenv                     | Module for managing environment variables (security)   | 16.5.0             |
+
+---
+
+## Runtime Architecture
+
+| Name                       | Purpose                                                | Version                             |
+|----------------------------|--------------------------------------------------------|-------------------------------------|
+| Web Browser                | Client-side execution environment                      | Any modern web browser              |
+| Android OS                 | Target mobile operating system                         | Android 7.0 (API 24) or later       |
+| Node.js Runtime            | Server-side environment for logic processing           | 22.15.1                             |
+| MSSQL Server               | Relational database for storage                        | 2022 Developer Edition (v16.0.1000) |
+| Capacitor Android          | Native bridge for the Android application              | 7.2.0                               |
+
+---
+
+## Required Files and Configurations:
+### package.json
+### vite.config.ts
+### .env
+### capacitor.config.ts
