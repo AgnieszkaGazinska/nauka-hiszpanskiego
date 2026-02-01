@@ -22,7 +22,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 ---
 
-# Software requirements specification
+# Software Requirements Specification
 
 ## 1.Notifications and User Engagement
 
@@ -267,5 +267,22 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 ---
 
-# Database setup
+# Database Implementation & Setup
 
+## Database Scripts (/database folder)
+
+### The system data layer is initialized using the following SQL scripts:
+###   schema.sql: Creates Categories and Words tables.
+###   procedures.sql: Adds Stored Procedures for data handling.
+###   sample_data.sql: Populates the database with initial vocabulary.
+
+## Configuration (Environment Variables)
+### To connect the backend to the database:
+### 1. Locate the env.example file in the backend directory.
+### 2. Rename it to .env.
+### 3. Fill in your local database credentials:
+```env
+DB_USER=your_username
+DB_PASSWORD=your_password
+DB_SERVER=your_server_address
+DB_DATABASE=HiszpanskiDB
