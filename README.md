@@ -272,9 +272,9 @@ OTHER DEALINGS IN THE SOFTWARE.
 ## Database Scripts (/database folder)
 
 ### The system data layer is initialized using the following SQL scripts:
-###   schema.sql: Creates Categories and Words tables.
-###   procedures.sql: Adds Stored Procedures for data handling.
-###   sample_data.sql: Populates the database with initial vocabulary.
+#### - schema.sql: Creates Categories and Words tables.
+#### - procedures.sql: Adds Stored Procedures for data handling.
+#### - sample_data.sql: Populates the database with initial vocabulary.
 
 ## Configuration (Environment Variables)
 ### To connect the backend to the database:
